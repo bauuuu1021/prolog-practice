@@ -25,7 +25,9 @@ multiple(I,X,Return):-I<X, mod(X,I)\=0, add1(I,NewI), multiple(NewI,X,NewReturn)
 multiple(I,X,Return):-I>=X, Return is 0.
 
 main :-
-writeln('input'), 
+writeln('1. should end with .'),
+writeln('2. integer should greater than 2'),
+write('input : '), 
 read(Input),
 find(Input),
 halt.
