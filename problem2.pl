@@ -21,8 +21,8 @@ query(Time):-Time=:=0.
 
 %find lca
 lca(X,Y,InitY):-X=:=Y, writeln(X).
-lca(X,Y,InitY):-X\=Y, Y\=1, parent(NewY,Y), lca(X,NewY,InitY).
-lca(X,Y,InitY):-X\=Y, Y=:=1, parent(NewX,X), lca(NewX, InitY, InitY).
+lca(X,Y,InitY):-X\=Y, parent(NewY,Y), lca(X,NewY,InitY).
+lca(X,Y,InitY):-X\=Y, not(parent(NewY,Y)), parent(NewX,X), lca(NewX, InitY, InitY).
 
 main :-
 %relation
