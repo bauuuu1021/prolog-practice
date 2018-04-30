@@ -16,7 +16,7 @@ minus1(L,NewL),add1(R,NewR),
 loop(NewL,NewR).
 loop(L,R):-
 multiple(2,L,RetL),multiple(2,R,RetR),Cmp is RetL+RetR, Cmp=:=0,  %may cause problem
-write(L),write(' '),writeln(R).
+write('result : '),write(L),write(' '),writeln(R).
 
 %if the input number is multiple return 1; otherwise, return 0
 multiple(I,X,Return):-X=:=2, Return is 0.
@@ -26,7 +26,7 @@ multiple(I,X,Return):-I>=X, Return is 0.
 
 main :-
 writeln('1. should end with .'),
-writeln('2. integer should greater than 2'),
+writeln('2. even integer greater than 2'),
 write('input : '), 
 read(Input),
 find(Input),
